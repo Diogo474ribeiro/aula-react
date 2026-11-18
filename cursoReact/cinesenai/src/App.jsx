@@ -3,6 +3,10 @@
 //   const ano = 2026;
 //   const duracaoMinutos = 166;
 
+import { Navbar } from "./components/NavBar";
+
+
+
 //   return (
 //     <>
 //     <h1 className="titulo">{titulo}</h1>
@@ -18,16 +22,41 @@
 
 // export default App;
 
-import { Rodape } from "./components/Rodape"
+
+
+
+
+// import { Rodape } from "./components/Rodape"
+
+// function App() {
+//   return (
+//     <>
+//     <h1>cineSenai</h1>
+//     <Rodape />
+//     <Rodape />
+//     </>
+//   );
+// }
+
+// export default App;
+
 
 function App() {
+
   return (
     <>
-    <h1>cineSenai</h1>
-    <Rodape />
-    <Rodape />
+    <Navbar />
+    <div className="container">
+      <h1>catálogo</h1>
+    </div>
     </>
   );
 }
 
 export default App;
+
+
+
+
+
+
