@@ -3,7 +3,11 @@
 //   const ano = 2026;
 //   const duracaoMinutos = 166;
 
-import { Navbar } from "./components/NavBar";
+import { Navbar } from "./components/Navbar"
+import { Home } from "./pages/home";
+
+
+// import { Saudacao } from "./components/Saudacao";
 
 
 
@@ -46,9 +50,7 @@ function App() {
   return (
     <>
     <Navbar />
-    <div className="container">
-      <h1>catálogo</h1>
-    </div>
+    <Home />
     </>
   );
 }
