@@ -2,7 +2,7 @@ import "./Home.css";
 import { FilmeCard } from "../components/FilmeCard";
 
 const GENERO_LABELS = {
-  ACAO: "Açâo",
+  ACAO: "Ação",
   COMEDIA: "Comédia",
   DRAMA: "Drama",
   TERROR: "Terror",
@@ -16,7 +16,6 @@ const GENERO_LABELS = {
   CULT: "Cult",
   AVENTURA: "Aventura",
   MUSICAL: "Musical",
-  ANIME: "anime",
 };
 
 const filmes = [
@@ -63,10 +62,10 @@ export const Home = () => {
   return (
     <div className="container">
       <div className="page-header catalog-header">
-        <h2 className="catalog-title">Nosso catálogo</h2>
+        <h2 className="catalog-title">Nosso Catálogo</h2>
       </div>
 
-      <div className="movie-grid">
+      {/* <div className="movie-grid">
         {filmes.map((filme) => (
           <FilmeCard
             key={filme.id}
@@ -77,7 +76,44 @@ export const Home = () => {
             descricao={filme.descricao}
           />
         ))}
-      </div>
+      </div> */}
+
+      <p>{filmes.length} {filmes.length === 1 ? "filme" : "filmes"} em cartaz</p>
+
+      {filmes.length > 0 ? (
+        <div className="movie-grid">
+          {filmes.map((filme) => (
+            <FilmeCard
+              key={filme.id}
+              titulo={filme.titulo}
+              genero={GENERO_LABELS[filme.genero] || filme.genero}
+              duracaoMinutos={filme.duracaoMinutos}
+              urlPoster={filme.urlPoster}
+              descricao={filme.descricao}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="glass home-empty">
+          <svg
+            className="home-empty-icon"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+            />
+          </svg>
+          <h3 className="home-empty-title">Nenhum filme encontrado</h3>
+          <p className="home-empty-text">
+            Tente alterar os termos da busca ou selecionar outro gênero.
+          </p>
+        </div>
+      )}
     </div>
   );
 };

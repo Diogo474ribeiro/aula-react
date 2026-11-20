@@ -4,7 +4,8 @@
 //   const duracaoMinutos = 166;
 
 import { Navbar } from "./components/Navbar"
-import { Home } from "./pages/home";
+import { Contador } from "./components/Contador";
+import { Home } from "./pages/Home"; 
 
 
 // import { Saudacao } from "./components/Saudacao";
@@ -50,7 +51,9 @@ function App() {
   return (
     <>
     <Navbar />
+    <Contador />
     <Home />
+    
     </>
   );
 }
